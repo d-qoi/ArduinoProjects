@@ -3,6 +3,8 @@
 /*
 Controller for a vacuum pump
 
+Designed for an Uno
+
 Requires a pot, and a pressure sensor as inputs
 
 has 3 outputs
