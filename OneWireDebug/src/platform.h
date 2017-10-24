@@ -5,9 +5,6 @@
 #include <Arduino.h>
 #endif
 
-#define BAUDRATE 9600;
-
-
 #define PIN_TO_BASEREG(pin)             (portInputRegister(digitalPinToPort(pin)))
 #define PIN_TO_BITMASK(pin)             (digitalPinToBitMask(pin))
 #define DIRECT_READ(base, mask)         (((*(base)) & (mask)) ? 1 : 0)
