@@ -33,17 +33,17 @@ will keep pump off when pressure stabalizes below minval.
 #define PRESSUREPIN A1
 
 // OUTPUTS
-#define RELAYPIN A2
-#define SOLINOIDPIN A3 //yes
+#define RELAYPIN A3
+#define SOLINOIDPIN A2 //yes
 
 // Constants
-#define histSize 32 //no more than 255, due to byte for nextPos
+#define histSize 10 //no more than 255, due to byte for nextPos
 
 const unsigned int timer1Start = 39065; // half sampling frequency, max of 65535, currently set for 5 seconds.
 
-const double conversionFactor = 1.0; 
+const double conversionFactor = 0.5; // 0.5*0.295 for inHg, 0.5*7.5 for mmhg 
 const double delta = 3.0; // how far apart can the hist values be for it to be within range?
-const double diff = 0.5; // how far below the final value, if hist is set, for max value to be.
+const double diff = 3.0; // how far below the final value, if hist is set, for max value to be. (in measured value);
 
 double vacuumhist[histSize];
 double* lastValue;
